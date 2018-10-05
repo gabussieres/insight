@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
 
-import { Navigation } from "./Navigation/component";
-import logo from "./images/Logo.png";
+import { Navigation } from "../Navigation/component";
+import logo from "../images/Logo.png";
 
 const Wrapper = styled.div`
   font-family: Open Sans, sans-serif;
@@ -27,6 +27,7 @@ const LeftWrapper = styled.div`
 
 class App extends Component {
   render() {
+    console.log("app", this.props);
     return (
       <Wrapper className="App">
         <Navigation />
@@ -34,7 +35,12 @@ class App extends Component {
           <Row>
             <Col lg={5}>
               <LeftWrapper>
-                <img src={logo} height="200" width="200" />
+                <img
+                  src={logo}
+                  alt="The Nine-Dot Problem logo"
+                  height="200"
+                  width="200"
+                />
               </LeftWrapper>
             </Col>
             <Col lg={7}>

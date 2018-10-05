@@ -1,7 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import registerServiceWorker from "./registerServiceWorker";
+import { Provider } from "react-redux";
+import { Route, Router, browserHistory } from "react-router";
+import { syncHistoryWithStore } from "react-router-redux";
 
-ReactDOM.render(<App />, document.getElementById("root"));
-registerServiceWorker();
+import configureStore from "./store/configureStore.js";
+
+import App from "./Pages/App";
+
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router
+      history={history}
+      store={store}
+      onUpdate={() => window.scrollTo(0, 0)}
+    >
+      <Route path="/" component={App} />
+    </Router>
+  </Provider>,
+  document.getElementById("root")
+);

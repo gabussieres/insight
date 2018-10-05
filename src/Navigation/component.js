@@ -42,7 +42,7 @@ const LogoWrapper = styled.div`
 export const Navigation = () => (
   <Nav>
     <NavList>
-      <NavButton title href="/">
+      <NavButton title="true" href="/">
         <LogoWrapper>
           <img src={logo_img} alt="Logo" height="20" width="20" />
         </LogoWrapper>
