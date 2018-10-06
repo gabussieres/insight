@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import rootReducer from "../App/reducers";
+import rootReducer from "./rootReducer";
 import rootSaga from "../App/sagas";
 
 const composeEnhancers = composeWithDevTools({
@@ -22,8 +22,8 @@ const configureStore = preloadedState => {
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
-    module.hot.accept("../App/reducers", () => {
-      const nextRootReducer = require("../App/reducers").default;
+    module.hot.accept("./rootReducer", () => {
+      const nextRootReducer = require("./rootReducer").default;
       store.replaceReducer(nextRootReducer);
     });
   }

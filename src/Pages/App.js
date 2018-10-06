@@ -1,6 +1,5 @@
 import React from "react";
-import Container from "../App/container";
 
-const App = props => <Container>{props.children}</Container>;
+const App = props => <div>{props.children}</div>;
 
 export default App;

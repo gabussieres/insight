@@ -57,8 +57,10 @@ export const Navigation = () => (
       </NavButton>
       <NavButton href="">About</NavButton>
       <NavButton href="">References</NavButton>
-      <NavButton href="">Definitions</NavButton>
+      <NavButton href="/definitions">Definitions</NavButton>
       <NavButton href="">Select</NavButton>
     </NavList>
   </Nav>
 );
+
+export default Navigation;
