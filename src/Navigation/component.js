@@ -55,8 +55,7 @@ export const Navigation = () => (
       >
         <img src={git_icon} alt="GitHub" height="30" width="30" />
       </NavButton>
-      <NavButton href="">About</NavButton>
-      <NavButton href="">References</NavButton>
+      <NavButton href="/references">References</NavButton>
       <NavButton href="/definitions">Definitions</NavButton>
       <NavButton href="">Select</NavButton>
     </NavList>

@@ -21,44 +21,82 @@ const Wrapper = styled.div`
 const RightWrapper = styled.div``;
 
 const LeftWrapper = styled.div`
-  text-align: right;
+  text-align: left;
+  font-weight: bold;
+  padding-left: 62px;
 `;
+
+const definitions = [
+  {
+    term: "Combinatorial Explosion",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  },
+  {
+    term: "Insight",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  },
+  {
+    term: "Insight Problem",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  },
+  {
+    term: "Non-Insight Problem",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  },
+  {
+    term: "Problem Reformulation",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  },
+  {
+    term: "Search-Inference Framework",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  },
+  {
+    term: "Gestalt Framework",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  },
+  {
+    term: "General Problem Solver",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  },
+  {
+    term: "Search Space",
+    definition:
+      "Definition of insight. Definition of insight. Definition of insight."
+  }
+];
+
+const definitionRow = (term, definition) => (
+  <Row>
+    <Col lg={3}>
+      <LeftWrapper>
+        <DefinedTerm>{term}</DefinedTerm>
+      </LeftWrapper>
+    </Col>
+    <Col lg={7}>
+      <RightWrapper>
+        <p>{definition}</p>
+      </RightWrapper>
+    </Col>
+  </Row>
+);
 
 const SelectedProblem = () => (
   <Wrapper className="App">
     <Navigation />
     <div className="container">
       <ProblemTitle>Definitions</ProblemTitle>
-      <Row>
-        <Col lg={3}>
-          <LeftWrapper>
-            <DefinedTerm>Insight</DefinedTerm>
-          </LeftWrapper>
-        </Col>
-        <Col lg={7}>
-          <RightWrapper>
-            <p>
-              Definition of insight. Definition of insight. Definition of
-              insight.
-            </p>
-          </RightWrapper>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={3}>
-          <LeftWrapper>
-            <DefinedTerm>Insight</DefinedTerm>
-          </LeftWrapper>
-        </Col>
-        <Col lg={7}>
-          <RightWrapper>
-            <p>
-              Definition of insight. Definition of insight. Definition of
-              insight.
-            </p>
-          </RightWrapper>
-        </Col>
-      </Row>
+      {definitions.map(definitionObject =>
+        definitionRow(definitionObject.term, definitionObject.definition)
+      )}
     </div>
   </Wrapper>
 );

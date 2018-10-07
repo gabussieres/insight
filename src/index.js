@@ -9,6 +9,7 @@ import configureStore from "./store/configureStore.js";
 import App from "./pages/App";
 import SelectedProblem from "./pages/SelectedProblem";
 import Definitions from "./pages/Definitions";
+import References from "./pages/References";
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -23,6 +24,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <IndexRoute component={SelectedProblem} />
         <Route path="definitions" component={Definitions} />
+        <Route path="references" component={References} />
       </Route>
     </Router>
   </Provider>,
